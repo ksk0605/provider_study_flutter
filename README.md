@@ -1,17 +1,23 @@
-# provider_test
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
 # provider_study_flutter
+## __프로바이더란__?
+<img src='/Users/kimsungkyum/Desktop/vsflutter/provider_test/assets/providerimg.jpeg'>
+
+기존에 우리가 사용하던 setState의 단점은 위젯 트리의 뎁스가 커지면 관리하기가 매우 까다롭다는 것입니다. 
+부모 자식 위젯간에 콜백으로 연결돼있어서 UI에 로직이 강하게 결합된 스파게티 코드가 만들어지기 때문이죠.
+
+따라서 하위트리 어디든 상태값을 참조하는 것이 가능한 라이브러리인 상태관리 라이브러리의 힘을 빌리는 것이 좋죠.
+
+주로 많이 사용하는 라이브러리는 다음과 같습니다.
+* bloc
+* provider
+* getx  
+
+이 프로젝트에서는 간단하게 provider를 통해 상태관리가 어떻게 이루어지는지 실습하였습니다. 
+
+## __학습 포인트__
+---
+* provider는 해당하는 위젯트리의 하위항목들을 넘나들며 상태변화를 시켜주기 때문에 상태관리를 해줄 위젯들의 가장 위에 만들어주는 것이 좋다. 
+
+* 해당 예제와 global 변수를 사용하면 꼭 provider가 아니더라도 해결할 수 있는 문제에서는 무조건 사용해줄 필요는 없다. 그러나 프로젝트가 커질 때에는 provider를 고려한 구조를 생각하는 것이 좋다. 
+
+* NotifiListener()는 데이터가 변경되었을 때만 사용해주면 된다. 데이터를 읽기만 하는 동작이라면 굳이 사용해줄 필요는 없다.
